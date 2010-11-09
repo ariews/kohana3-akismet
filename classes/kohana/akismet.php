@@ -104,12 +104,15 @@ class Kohana_Akismet {
             $this->_config['blog'] = $config['blog'];
         }
 
-        $this->_config['server'] = isset($config['server'])
-                                   ? $config['server'] : Akismet::AKISMET_HOST;
+        if (isset($config['server']))
+        {
+            $this->_config['server'] = $config['server'];
+        }
 
-        $this->_config['port']   = isset($config['port'])
-                                   ? $config['port'] : Akismet::AKISMET_PORT;
-
+        if (isset($config['port']))
+        {
+            $this->_config['port'] = $config['port'];
+        }
         // Chainable method
         return $this;
     }
